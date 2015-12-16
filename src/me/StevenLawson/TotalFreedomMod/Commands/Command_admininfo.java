@@ -18,11 +18,11 @@ public class Command_admininfo extends TFM_Command
             sender.sendMessage(ChatColor.GOLD + "============HOW TO APPLY============");
             sender.sendMessage(ChatColor.AQUA + "If you want to be an administrator, you need to follow these steps:");
             sender.sendMessage(ChatColor.AQUA + "First of all, you need to need to make an account on our forum: http://immafreedom.eu/");
-            sender.sendMessage(ChatColor.RED + "Then you have to wait 5 days before you apply!"
             sender.sendMessage(ChatColor.AQUA + "Secondly, copy the template from this thread: http://immafreedom.eu/showthread.php?tid=3");
             sender.sendMessage(ChatColor.AQUA + "After that, make a new thread by going to this link: http://immafreedom.eu/newthread.php?fid=9");
             sender.sendMessage(ChatColor.AQUA + "Finally, paste the template on the thread you just created, and answer all the questions!");
             sender.sendMessage(ChatColor.RED + "Please make sure you meet all the requirements before you submit your application!");
+            sender.sendMessage(ChatColor.RED + "You have to wait 5 days till you can Apply for Super Admin!");
             sender.sendMessage(ChatColor.GOLD + "============HOW TO APPLY============");
             return true;
         }
