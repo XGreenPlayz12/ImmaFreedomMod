@@ -948,12 +948,12 @@ public class TFM_PlayerListener implements Listener
             }
         }
     }
-    
+
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onBreakBlock(BlockBreakEvent event)
     {
         final Player player = event.getPlayer();
-        
+
         if (player.getGameMode().equals(GameMode.SURVIVAL))
         {
             for (ItemStack block : event.getBlock().getDrops())
