@@ -15,11 +15,6 @@ public class Command_reload extends TFM_Command
     {
         TFM_Util.bcastMsg("Server is reloading", ChatColor.LIGHT_PURPLE);
 
-        for (Player player : server.getOnlinePlayers())
-        {
-            player.kickPlayer("The server is currently reloading, come back in about 10-20 seconds.");
-        }
-
         server.reload();
 
         return true;
