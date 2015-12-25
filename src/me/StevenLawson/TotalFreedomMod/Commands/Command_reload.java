@@ -6,8 +6,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.ONLY_CONSOLE, blockHostConsole = true)
-@CommandParameters(description = "Kicks everyone and reloads the server safely.", usage = "/<command>", aliases = "rl")
+@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
+@CommandParameters(description = "Reloads the server safely.", usage = "/<command>", aliases = "rl")
 public class Command_reload extends TFM_Command
 {
     @Override
