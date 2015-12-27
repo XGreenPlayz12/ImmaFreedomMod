@@ -13,10 +13,12 @@ public class Command_reload extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        TFM_Util.bcastMsg("Server is reloading", ChatColor.LIGHT_PURPLE);
+        TFM_Util.bcastMsg("Server is being reloaded by " + sender.getName + ", expect lag.", ChatColor.GREEN);
 
         server.reload();
-
+        
+        TFM_Util.bcastMsg("Reload completed! Thanks for your patience.", ChatColor.GREEN);
+        
         return true;
     }
 }
