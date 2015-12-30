@@ -256,14 +256,14 @@ hr.footer-rule {
   background-color: #a7a8a8;
 }
 
-h3.infolinks {
+h3.info-links {
   opacity: 0.7;
   color: #90EE90;
   -webkit-transition: color 0.7s, opacity 0.7s;
   -o-transition: color 0.7s, opacity 0.7s;
   transition: color 0.7s, opacity 0.7s;
 }
-h3.infolinks:hover {
+h3.info-links:hover {
   color: #81d681;
   opacity: 1;
 }
