@@ -12,8 +12,13 @@ body {
 a {
   color: #1e6bb8;
   text-decoration: none; }
+	-webkit-transition: color 0.7s;
+	-o-transition: color 0.7s;
+	transition: color 0.7s;
+	
   a:hover {
-    text-decoration: underline; }
+    color: #1b60a5;
+  }
 
 .btn {
   display: inline-block;
