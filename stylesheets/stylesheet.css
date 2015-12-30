@@ -223,7 +223,7 @@ a {
 .site-footer {
   padding-top: 2rem;
   margin-top: 2rem;
-  border-top: solid 1px #eff0f1; }
+  }
 
 .site-footer-owner {
   display: block;
@@ -242,4 +242,12 @@ a {
 
 @media screen and (max-width: 42em) {
   .site-footer {
-    font-size: 0.9rem; } }
+    font-size: 0.9rem; }
+    
+}
+hr.footer-rule {
+  opacity: 1;
+  height: 1px;
+  width: 25px;
+  background-color: #eff0f1;
+}
