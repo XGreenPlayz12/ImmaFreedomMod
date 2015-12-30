@@ -248,6 +248,6 @@ a {
 hr.footer-rule {
   opacity: 1;
   height: 1px;
-  width: 25px;
+  width: 100px;
   background-color: #eff0f1;
 }
