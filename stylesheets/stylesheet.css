@@ -247,11 +247,23 @@ a {
 
 @media screen and (max-width: 42em) {
   .site-footer {
-    font-size: 0.9rem; }
-    
-}
+    font-size: 0.9rem; }}
+
+
 hr.footer-rule {
   height: 1px;
   width: 100%;
   background-color: #a7a8a8;
+}
+
+.infolinks {
+	opacity: 0.7;
+	color: #90EE90;
+	-webkit-transition: color 0.7s, opacity 0.7s;
+	-o-transition: color 0.7s, opacity 0.7s;
+	transition: color 0.7s, opacity 0.7s;
+}
+.infolinks:hover {
+	color: #81d681;
+	opacity: 1;
 }
