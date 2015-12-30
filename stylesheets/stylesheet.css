@@ -272,6 +272,9 @@ hr.small-rule {
   height: 1px;
   width: 12%;
 }
-div.content {
+/*div.content {
   margin-bottom: 40px;
+}*/
+div.space {
+  margin-bottom: 100px;
 }
