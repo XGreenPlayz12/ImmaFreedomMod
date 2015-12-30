@@ -246,8 +246,7 @@ a {
     
 }
 hr.footer-rule {
-  
   height: 1px;
-  width: 100px;
+  width: 50%;
   background-color: #a7a8a8;
 }
