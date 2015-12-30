@@ -267,3 +267,8 @@ h3.info-links:hover {
   color: #73be73;
   opacity: 1;
 }
+hr.small-rule {
+	background-color: #a7a8a8;
+	height: 1px;
+	width: 1%;
+}
