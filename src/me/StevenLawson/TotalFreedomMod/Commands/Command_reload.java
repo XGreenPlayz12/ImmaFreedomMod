@@ -16,9 +16,9 @@ public class Command_reload extends TFM_Command
         TFM_Util.bcastMsg("Server is being reloaded by " + sender.getName() + ", expect lag.", ChatColor.GREEN);
 
         server.reload();
-        
+
         TFM_Util.bcastMsg("Reload completed! Thanks for your patience.", ChatColor.GREEN);
-        
+
         return true;
     }
 }

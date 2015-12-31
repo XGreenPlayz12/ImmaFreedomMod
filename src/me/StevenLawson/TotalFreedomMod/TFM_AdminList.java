@@ -345,7 +345,6 @@ public class TFM_AdminList
         return adminList.get(uuid);
     }
 
-    @Deprecated
     public static TFM_Admin getEntry(String name)
     {
         for (UUID uuid : adminList.keySet())
