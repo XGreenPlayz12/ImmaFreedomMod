@@ -281,4 +281,10 @@ p#hide-button {
   cursor: pointer;
   font-weight: 700;
   color: #ccc;
+  -webkit-transition: color 0.7s;
+  -moz-transition: color 0.7s;
+  -o-transition: color 0.7s;
+}
+p#hide-button:hover {
+  color: #000;
 }
