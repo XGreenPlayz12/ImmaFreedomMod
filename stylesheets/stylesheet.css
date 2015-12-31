@@ -275,7 +275,7 @@ hr.small-rule {
 div.space {
   margin-bottom: 100px;
 }
-p.hide-button {
+p#hide-button {
   float: right;
   text-align: right;
   cursor: pointer;
