@@ -1,6 +1,8 @@
 package me.StevenLawson.TotalFreedomMod.Listener;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.IllegalFormatException;
 import java.util.Iterator;
 import java.util.List;
@@ -68,6 +70,8 @@ public class TFM_PlayerListener implements Listener
     public static final int MSG_PER_HEARTBEAT = 10;
     public static final int DEFAULT_PORT = 25565;
     public static final int MAX_XY_COORD = 30000000;
+
+    public static final List<String> SILENCE_CHAT = new ArrayList<String>();
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onPlayerInteract(PlayerInteractEvent event)
@@ -604,6 +608,21 @@ public class TFM_PlayerListener implements Listener
         {
             TFM_Log.severe(ex);
         }
+
+        if (SILENCE_CHAT.contains(event.getPlayer().getName()))
+        {
+            event.setCancelled(true);
+            event.getPlayer().sendMessage("Chat is silenced, use /silence to toggle");
+            return;
+        }
+
+        for (Player p : new HashSet<Player>(event.getRecipients()))
+        {
+            if (SILENCE_CHAT.contains(p.getName()))
+            {
+                event.getRecipients().remove(p);
+            }
+        }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
@@ -905,6 +924,10 @@ public class TFM_PlayerListener implements Listener
                 }
             }
         }.runTaskLater(TotalFreedomMod.plugin, 20L * 1L);
+        if (SILENCE_CHAT.contains(player.getName()))
+        {
+            player.sendMessage("Chat is silenced, use /silence to toggle");
+        }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
