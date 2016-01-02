@@ -380,12 +380,9 @@ public class TFM_AdminList
                     }
                 }
             }
-            else
+            else if (superadmin.getIps().contains(needleIp))
             {
-                if (superadmin.getIps().contains(needleIp))
-                {
-                    return superadmin;
-                }
+                return superadmin;
             }
         }
         return null;

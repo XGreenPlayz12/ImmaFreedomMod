@@ -48,12 +48,9 @@ public class Module_list extends TFM_HTTPD_Module
                     prefix = "[Owner]";
                 }
             }
-            else
+            else if (player.isOp())
             {
-                if (player.isOp())
-                {
-                    prefix = "[OP]";
-                }
+                prefix = "[OP]";
             }
 
             body.append("<li>").append(prefix).append(player.getName()).append("</li>\r\n");

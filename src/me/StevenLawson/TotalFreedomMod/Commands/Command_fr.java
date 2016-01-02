@@ -44,29 +44,26 @@ public class Command_fr extends TFM_Command
                 playerMsg("Players are now free to move.");
             }
         }
+        else if (args[0].toLowerCase().equals("purge"))
+        {
+            setAllFrozen(false);
+            TFM_Util.adminAction(sender.getName(), "Unfreezing all players", false);
+        }
         else
         {
-            if (args[0].toLowerCase().equals("purge"))
+            final Player player = getPlayer(args[0]);
+
+            if (player == null)
             {
-                setAllFrozen(false);
-                TFM_Util.adminAction(sender.getName(), "Unfreezing all players", false);
+                playerMsg(TFM_Command.PLAYER_NOT_FOUND, ChatColor.RED);
+                return true;
             }
-            else
-            {
-                final Player player = getPlayer(args[0]);
 
-                if (player == null)
-                {
-                    playerMsg(TFM_Command.PLAYER_NOT_FOUND, ChatColor.RED);
-                    return true;
-                }
+            final TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(player);
+            playerdata.setFrozen(!playerdata.isFrozen());
 
-                final TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(player);
-                playerdata.setFrozen(!playerdata.isFrozen());
-
-                playerMsg(player.getName() + " has been " + (playerdata.isFrozen() ? "frozen" : "unfrozen") + ".");
-                playerMsg(player, "You have been " + (playerdata.isFrozen() ? "frozen" : "unfrozen") + ".", ChatColor.AQUA);
-            }
+            playerMsg(player.getName() + " has been " + (playerdata.isFrozen() ? "frozen" : "unfrozen") + ".");
+            playerMsg(player, "You have been " + (playerdata.isFrozen() ? "frozen" : "unfrozen") + ".", ChatColor.AQUA);
         }
 
         return true;

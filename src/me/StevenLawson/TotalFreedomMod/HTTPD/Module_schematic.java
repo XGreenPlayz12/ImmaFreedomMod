@@ -126,24 +126,21 @@ public class Module_schematic extends TFM_HTTPD_Module
                 {
                     out.append(HTMLGenerationTools.paragraph("Schematic upload access denied: Your IP, " + remoteAddress + ", is not registered to a superadmin on this server."));
                 }
+                else if (method == Method.POST)
+                {
+                    try
+                    {
+                        uploadSchematic();
+                        out.append(HTMLGenerationTools.paragraph("Schematic uploaded successfully."));
+                    }
+                    catch (SchematicTransferException ex)
+                    {
+                        out.append(HTMLGenerationTools.paragraph("Error uploading schematic: " + ex.getMessage()));
+                    }
+                }
                 else
                 {
-                    if (method == Method.POST)
-                    {
-                        try
-                        {
-                            uploadSchematic();
-                            out.append(HTMLGenerationTools.paragraph("Schematic uploaded successfully."));
-                        }
-                        catch (SchematicTransferException ex)
-                        {
-                            out.append(HTMLGenerationTools.paragraph("Error uploading schematic: " + ex.getMessage()));
-                        }
-                    }
-                    else
-                    {
-                        out.append(UPLOAD_FORM);
-                    }
+                    out.append(UPLOAD_FORM);
                 }
                 break;
             }

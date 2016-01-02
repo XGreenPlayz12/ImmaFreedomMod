@@ -78,27 +78,24 @@ public class Command_saconfig extends TFM_Command
                     playerMsg(counter + " IPs removed.");
                     playerMsg(admin.getIps().get(0) + " is now your only IP address");
                 }
+                else if (!admin.getIps().contains(args[1]))
+                {
+                    playerMsg("That IP is not registered to you.");
+                }
+                else if (ip.equals(args[1]))
+                {
+                    playerMsg("You cannot remove your current IP.");
+                }
                 else
                 {
-                    if (!admin.getIps().contains(args[1]))
-                    {
-                        playerMsg("That IP is not registered to you.");
-                    }
-                    else if (ip.equals(args[1]))
-                    {
-                        playerMsg("You cannot remove your current IP.");
-                    }
-                    else
-                    {
-                        TFM_Util.adminAction(sender.getName(), "Removing a supered IP", true);
+                    TFM_Util.adminAction(sender.getName(), "Removing a supered IP", true);
 
-                        admin.removeIp(args[1]);
+                    admin.removeIp(args[1]);
 
-                        TFM_AdminList.saveAll();
+                    TFM_AdminList.saveAll();
 
-                        playerMsg("Removed IP " + args[1]);
-                        playerMsg("Current IPs: " + StringUtils.join(admin.getIps(), ", "));
-                    }
+                    playerMsg("Removed IP " + args[1]);
+                    playerMsg("Current IPs: " + StringUtils.join(admin.getIps(), ", "));
                 }
 
                 break;

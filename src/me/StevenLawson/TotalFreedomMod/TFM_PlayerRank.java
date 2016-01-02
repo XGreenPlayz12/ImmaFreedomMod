@@ -115,17 +115,13 @@ public enum TFM_PlayerRank
                 rank = SUPER;
             }
         }
+        else if (sender.isOp())
+        {
+            rank = OP;
+        }
         else
         {
-            if (sender.isOp())
-            {
-                rank = OP;
-            }
-            else
-            {
-                rank = NON_OP;
-            }
-
+            rank = NON_OP;
         }
         return rank;
     }

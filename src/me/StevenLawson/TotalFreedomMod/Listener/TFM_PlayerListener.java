@@ -516,18 +516,15 @@ public class TFM_PlayerListener implements Listener
             {
                 //TFM_Log.warning("Heartbeat service timeout - can't check block place/break rates.");
             }
-            else
+            else if (playerdata.incrementAndGetMsgCount() > MSG_PER_HEARTBEAT)
             {
-                if (playerdata.incrementAndGetMsgCount() > MSG_PER_HEARTBEAT)
-                {
-                    TFM_Sync.bcastMsg(player.getName() + " was automatically kicked for spamming chat.", ChatColor.RED);
-                    TFM_Sync.autoEject(player, "Kicked for spamming chat.");
+                TFM_Sync.bcastMsg(player.getName() + " was automatically kicked for spamming chat.", ChatColor.RED);
+                TFM_Sync.autoEject(player, "Kicked for spamming chat.");
 
-                    playerdata.resetMsgCount();
+                playerdata.resetMsgCount();
 
-                    event.setCancelled(true);
-                    return;
-                }
+                event.setCancelled(true);
+                return;
             }
 
             // Check for message repeat

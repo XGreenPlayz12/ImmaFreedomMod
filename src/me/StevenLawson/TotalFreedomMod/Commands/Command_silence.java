@@ -15,10 +15,13 @@ public class Command_silence extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        if (TFM_PlayerListener.SILENCE_CHAT.contains(sender.getName())) {
+        if (TFM_PlayerListener.SILENCE_CHAT.contains(sender.getName()))
+        {
             TFM_PlayerListener.SILENCE_CHAT.remove(sender.getName());
             sender.sendMessage("Now listening to chat");
-        } else {
+        }
+        else
+        {
             TFM_PlayerListener.SILENCE_CHAT.add(sender.getName());
             sender.sendMessage("Chat will be silenced");
         }
