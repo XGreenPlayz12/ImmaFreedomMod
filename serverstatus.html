@@ -28,7 +28,7 @@
       <h1> 
       <a id="article-title" class="anchor" href="#server-status" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server Status</h1>
     <div style="font-size:25px;"><div class="player-count"></div></div>
-  
+    <div style="color:#008080; font-size:25px;"><div class="player-list"></div></div>
   
   // FOOTER & SCRIPTS
   
@@ -73,7 +73,26 @@
 			refresh();
  	});
  	   </script>
- 	   
+ 	       <script>
+    	$(document).ready(function () {
+	    var interval = 15000;
+		$("#players").addClass('hide');
+	    var refresh = function() {
+		$.getJSON("https://mcapi.ca/query/play.immafreedom.eu/list",function(json){
+        if (json.status !== true) {
+			$(".player-list").html('Online Players on ImmaFreedom:<div id="space-small"></div><span id="player-list-border-radius" style="border: 1px hidden; background-color: #1e252b; color: #fff;">'+json.Players.list+'</span> ');
+        } else {
+            $(".player-list").html('ImmaFreedom is currently empty!');
+              }
+	});
+	    setTimeout(function() {
+			refresh();
+	    		},
+			interval);
+	        	}
+			refresh();
+ 	});
+    </script>
  	   
     </body>
     </html
