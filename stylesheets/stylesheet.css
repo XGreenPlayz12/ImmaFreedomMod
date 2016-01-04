@@ -288,8 +288,3 @@ p#hide-button {
 p#hide-button:hover {
   color: #000;
 }
-.player-count {
-  background-color: #332312;
-  color: white;
-  text-align: center;
-}
