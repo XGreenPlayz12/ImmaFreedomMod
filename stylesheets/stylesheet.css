@@ -288,3 +288,7 @@ p#hide-button {
 p#hide-button:hover {
   color: #000;
 }
+.nav {
+  margin-top: 25px;
+}
+}
