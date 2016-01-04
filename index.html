@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   </head>
   <body>
+    			<div style="color:#996600; font-size:25px;"><div class="player-count"></div></div><br/>
     <section class="page-header">
       <h1 class="project-name">ImmaFreedomMod</h1>
       <h2 class="project-tagline">ImmaFreedom is a Minecraft Server with unlimited possibilites and features including unlimited and advanced WorldEdit!</h2>
@@ -57,5 +58,26 @@ Give us a shot, and connect today: play.immafreedom.eu</p>
 });
 </script>
   
+  // SERVER STATUS
+  <script>
+	$(document).ready(function () {
+	    var interval = 15000;
+		$("#players").addClass('hide');
+	    var refresh = function() {
+		$.getJSON("https://mcapi.ca/query/play.immafreedom.eu/players",function(json){
+		      if (json.status !== true) {
+			$(".player-count").html('ImmaFreedom is currently <span style="color: red; font-weight: bolder; text-shadow: 1px 1px 4px white;"> offline</span>!' + '<br/>' + '<a href="/conversation/new/1">Notify the owner via PM!</a>!');
+			} else {
+			$(".player-count").html('ImmaFreedom is currently <span style="color: lime; font-weight: bolder; text-shadow: 1px 1px 4px black;"> online</span> and has <span style="color: coral; font-weight: bolder; text-shadow: 1px 1px 4px black;"> '+json.players.online+'/45 </span>players online at the moment!');
+	}
+	});
+	    setTimeout(function() {
+			refresh();
+	    		},
+			interval);
+	        	}
+			refresh();
+ 	});
+ 	   </script>
   </body>
 </html>
