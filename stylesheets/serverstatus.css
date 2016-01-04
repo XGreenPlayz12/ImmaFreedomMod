@@ -27,3 +27,8 @@
         color: #b7b7b7;
         font-size: 17px;
     }
+.player-count {
+  background-color: #332312;
+  color: white;
+  text-align: center;
+}
