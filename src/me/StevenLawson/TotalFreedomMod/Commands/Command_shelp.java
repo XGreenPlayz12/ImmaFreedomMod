@@ -47,7 +47,7 @@ public class Command_shelp extends TFM_Command
         TFM_Util.playerMsg(player, "        `-\\      | |_ | | || |/ /|  _|   .' `,", ChatColor.WHITE);
         TFM_Util.playerMsg(player, "           `\\    |___|\\___/ \\__/ |___|  |     \\", ChatColor.WHITE);
         TFM_Util.playerMsg(player, "             \\            _ _           \\     |", ChatColor.WHITE);
-        TFM_Util.playerMsg(player, "         jgs  `\\         | | |         /`   _/", ChatColor.WHITE);
+        TFM_Util.playerMsg(player, "              `\\         | | |         /`   _/", ChatColor.WHITE);
         TFM_Util.playerMsg(player, "    ,-\"\"-.    .'`\\       | | |       /`-,-'` .-\"\"-,", ChatColor.WHITE);
         TFM_Util.playerMsg(player, "   /      `\\.'    `\\      \\___/     /`    './`      \\", ChatColor.WHITE);
         TFM_Util.playerMsg(player, "  ;  .--.   \\       '\\           /'       /   .--.  ;", ChatColor.WHITE);
