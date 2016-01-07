@@ -1,5 +1,6 @@
 package me.StevenLawson.TotalFreedomMod.HTTPD;
 
+import java.io.IOException;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
@@ -60,7 +61,7 @@ public abstract class TFM_HTTPD_Module
         {
             session.parseBody(files);
         }
-        catch (Exception ex)
+        catch (IOException | NanoHTTPD.ResponseException ex)
         {
             TFM_Log.severe(ex);
         }

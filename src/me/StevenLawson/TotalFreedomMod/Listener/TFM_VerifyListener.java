@@ -6,7 +6,6 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
-import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
 import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
 import net.camtech.verification.CamVerifyEvent;
 import org.bukkit.Bukkit;
@@ -35,8 +34,7 @@ public class TFM_VerifyListener implements Listener
                     out.flush();
                     out.close();
                     in.close();
-                }
-                catch (IOException ex)
+                } catch (IOException ex)
                 {
                     Logger.getLogger(TFM_VerifyListener.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -71,8 +69,6 @@ public class TFM_VerifyListener implements Listener
             if (TFM_AdminList.isAdminImpostor(player))
             {
                 TFM_AdminList.addSuperadmin(player);
-                TFM_PlayerData.getPlayerData(player).setFrozen(false);
-                player.setOp(true);
                 out.println(name + " has been successfully verified.");
                 close(out, in);
                 Bukkit.broadcastMessage(ChatColor.AQUA + name + " has been verified using CamVerify!");
@@ -80,8 +76,7 @@ public class TFM_VerifyListener implements Listener
             }
             out.println(name + " is not an imposter.");
             close(out, in);
-        }
-        catch (IOException ex)
+        } catch (IOException ex)
         {
             Logger.getLogger(TFM_VerifyListener.class.getName()).log(Level.SEVERE, null, ex);
         }

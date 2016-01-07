@@ -11,13 +11,14 @@ public class TFM_HTTPD_PageBuilder
             + "<title>{$TITLE}</title>\r\n"
             + "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n"
             + "{$STYLE}"
+            + "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\">\r\n"
             + "{$SCRIPT}"
             + "</head>\r\n"
             + "<body>\r\n{$BODY}</body>\r\n"
             + "</html>\r\n";
     private static final String STYLE = "<style type=\"text/css\">{$STYLE}</style>\r\n";
-    private static final String SCRIPT = "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js\"></script>\r\n"
-            + "<script src=\"//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js\"></script>\r\n"
+    private static final String SCRIPT = "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js\"></script>\r\n"
+            + "<script src=\"//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js\"></script>\r\n"
             + "<script>\r\n{$SCRIPT}\r\n</script>\r\n";
     //
     private String body = null;

@@ -54,7 +54,7 @@ public class Module_schematic extends TFM_HTTPD_Module
 
     public String title()
     {
-        return "TotalFreedomMod :: Schematic Manager";
+        return "ImmaFreedomMod :: Schematic Manager";
     }
 
     public String body() throws ResponseOverrideException
