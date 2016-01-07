@@ -67,7 +67,6 @@ Give us a shot, and connect today: play.immafreedom.eu</p>
   <script>
 	$(document).ready(function () {
 	    var interval = 15000;
-		$("#players").addClass('hide');
 	    var refresh = function() {
 		$.getJSON("https://mcapi.ca/query/play.immafreedom.eu/players",function(json){
 		      if (json.status !== true) {
