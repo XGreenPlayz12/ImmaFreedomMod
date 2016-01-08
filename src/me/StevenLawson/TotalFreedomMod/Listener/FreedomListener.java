@@ -1,9 +1,15 @@
 package me.StevenLawson.TotalFreedomMod.Listener;
 
+import com.sk89q.worldedit.bukkit.WorldEditPlugin;
+import com.sk89q.worldedit.bukkit.selections.Selection;
 import java.util.Collection;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
+import me.StevenLawson.TotalFreedomMod.TFM_ProtectedArea;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.entity.EnderDragon;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Ghast;
@@ -14,12 +20,14 @@ import org.bukkit.entity.Wither;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.util.Vector;
 
 // Implement FreedomOp Remastered methods
 public class FreedomListener implements Listener
@@ -47,6 +55,37 @@ public class FreedomListener implements Listener
         if (event.getTo().getBlockX() >= 29999000 || event.getTo().getBlockZ() >= 29999000)
         {
             event.setCancelled(true);
+        }
+    }
+
+    @SuppressWarnings("null")
+    @EventHandler
+    public void onCommandPreprocess(PlayerCommandPreprocessEvent event)
+    {
+        String message = event.getMessage();
+        Player player = event.getPlayer();
+        WorldEditPlugin plugin = (WorldEditPlugin) Bukkit.getPluginManager().getPlugin("WorldEdit");
+        if (message.replaceAll("/", "").split(" ")[0].equalsIgnoreCase("set")
+                && message.replaceAll("/", "").split(" ")[0].equalsIgnoreCase("sphere")
+                && message.replaceAll("/", "").split(" ")[0].equalsIgnoreCase("hsphere")
+                && message.replaceAll("/", "").split(" ")[0].equalsIgnoreCase("cyl")
+                && message.replaceAll("/", "").split(" ")[0].equalsIgnoreCase("hcyl")
+                && message.replaceAll("/", "").split(" ")[0].equalsIgnoreCase("replace"))
+        {
+            Selection selection = plugin.getSelection(event.getPlayer());
+            Location location1 = selection.getMaximumPoint();
+            Location location2 = selection.getMinimumPoint();
+            String world = selection.getWorld().getName();
+            Vector max = location1.toVector();
+            Vector min = location2.toVector();
+            if (TFM_ProtectedArea.isInProtectedArea(min, max, world))
+            {
+                if (!TFM_AdminList.isSuperAdmin(player))
+                {
+                    event.setCancelled(true);
+                    player.sendMessage(ChatColor.RED + "You cannot use WorldEdit in a protected area!");
+                }
+            }
         }
     }
 

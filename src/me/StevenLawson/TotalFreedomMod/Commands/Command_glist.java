@@ -10,23 +10,18 @@ import me.StevenLawson.TotalFreedomMod.TFM_Player;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TFM_UuidManager;
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH, blockHostConsole = true)
-@CommandParameters(description = "Bans or unbans any player, even those who are not logged in anymore.", usage = "/<command> <purge | <ban | unban> <username>> [reason]")
+@CommandParameters(description = "Bans or unbans any player, even those who are not logged in anymore.", usage = "/<command> <purge | <ban | unban> <username>>")
 public class Command_glist extends TFM_Command
 {
     @Override
-    @SuppressWarnings("null")
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {     
-        String reason;
-        
-        
+    {
         if (args.length < 1)
         {
             return false;
@@ -52,9 +47,8 @@ public class Command_glist extends TFM_Command
                 return false;
             }
         }
-        else if (args.length >= 2)
+        else if (args.length == 2)
         {
-            reason = StringUtils.join(ArrayUtils.subarray(args, 1, args.length), " ");
             String username;
             final List<String> ips = new ArrayList<String>();
 
@@ -93,12 +87,12 @@ public class Command_glist extends TFM_Command
                 }
                 else
                 {
-                    TFM_BanManager.addUuidBan(new TFM_Ban(TFM_UuidManager.getUniqueId(player), player.getName(), sender.getName(), null, reason));
+                    TFM_BanManager.addUuidBan(new TFM_Ban(TFM_UuidManager.getUniqueId(username), username));
                 }
 
                 for (String ip : ips)
                 {
-                    TFM_BanManager.addIpBan(new TFM_Ban(ip, player.getName(), sender.getName(), null, reason));
+                    TFM_BanManager.addIpBan(new TFM_Ban(ip, username));
                     TFM_BanManager.addIpBan(new TFM_Ban(TFM_Util.getFuzzyIp(ip), username));
                 }
             }
