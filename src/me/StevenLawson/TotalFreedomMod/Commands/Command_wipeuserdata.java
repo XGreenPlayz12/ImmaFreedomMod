@@ -19,13 +19,11 @@ public class Command_wipeessdata extends TFM_Command
             return true;
         }
 
-        TFM_Util.adminAction(sender.getName(), "Wiping Essentials playerdata and warps", true);
+        TFM_Util.adminAction(sender.getName(), "Wiping Essentials playerdata", true);
 
         TFM_Util.deleteFolder(new File(server.getPluginManager().getPlugin("Essentials").getDataFolder(), "userdata"));
-        TFM_Util.deleteFolder(new File(server.getPluginManager().getPlugin("Essentials").getDataFolder(), "warps"));
 
         playerMsg("All playerdata deleted.");
-        playerMsg("All warps deleted.");
         return true;
     }
 }
