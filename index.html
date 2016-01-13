@@ -70,7 +70,7 @@ Give us a shot, and connect today: play.immafreedom.eu</p>
 	    var refresh = function() {
 		$.getJSON("https://mcapi.ca/query/play.immafreedom.eu/players",function(json){
 		      if (json.status !== true) {
-			$(".player-count").html('ImmaFreedom is currently <span style="color: red; font-weight: bolder; text-shadow: 1px 1px 4px #999999;"> offline</span>!' + '<br/>' + '<a href="/conversation/new/1">Notify the owner via PM!</a>!');
+			$(".player-count").html('ImmaFreedom is currently <span style="color: red; font-weight: bolder; text-shadow: 1px 1px 4px #999999;"> offline</span>!' + '<br/>' + '<a href="http://immafreedom.eu/conversation/new/1">Notify the owner via PM!</a>!');
 			} else {
 			$(".player-count").html('ImmaFreedom is currently <span style="color: lime; font-weight: bolder; text-shadow: 1px 1px 4px #999999;"> online</span> and has <span style="color: coral; font-weight: bolder; text-shadow: 1px 1px 4px #999999;"> '+json.players.online+'/45 </span>players online!');
 	}
