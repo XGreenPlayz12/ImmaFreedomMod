@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.ONLY_CONSOLE, blockHostConsole = true)
-@CommandParameters(description = "Removes essentials playerdata", usage = "/<command>")
+@CommandParameters(description = "Removes essentials playerdata", usage = "/<command>", aliases = "wipeuserdata")
 public class Command_wipeessdata extends TFM_Command
 {
     @Override

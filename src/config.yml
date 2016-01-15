@@ -321,3 +321,5 @@ autokick:
 # Players with access to the overlord command
 overlord_ips:
     - 0.0.0.0
+
+enable_builder_world: true

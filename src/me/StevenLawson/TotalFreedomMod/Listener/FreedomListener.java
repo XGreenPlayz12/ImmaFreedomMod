@@ -9,7 +9,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.World;
 import org.bukkit.entity.EnderDragon;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Ghast;
@@ -32,7 +31,6 @@ import org.bukkit.util.Vector;
 // Implement FreedomOp Remastered methods
 public class FreedomListener implements Listener
 {
-
     @EventHandler
     public void onPlayerKick(PlayerKickEvent event)
     {

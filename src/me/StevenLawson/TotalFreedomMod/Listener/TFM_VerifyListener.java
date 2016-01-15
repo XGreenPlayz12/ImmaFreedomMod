@@ -34,7 +34,8 @@ public class TFM_VerifyListener implements Listener
                     out.flush();
                     out.close();
                     in.close();
-                } catch (IOException ex)
+                }
+                catch (IOException ex)
                 {
                     Logger.getLogger(TFM_VerifyListener.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -76,7 +77,8 @@ public class TFM_VerifyListener implements Listener
             }
             out.println(name + " is not an imposter.");
             close(out, in);
-        } catch (IOException ex)
+        }
+        catch (IOException ex)
         {
             Logger.getLogger(TFM_VerifyListener.class.getName()).log(Level.SEVERE, null, ex);
         }

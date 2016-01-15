@@ -21,6 +21,7 @@ import me.StevenLawson.TotalFreedomMod.Listener.TFM_ServerListener;
 import me.StevenLawson.TotalFreedomMod.Listener.TFM_VerifyListener;
 import me.StevenLawson.TotalFreedomMod.Listener.TFM_WeatherListener;
 import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
+import me.StevenLawson.TotalFreedomMod.World.TFM_BuilderWorld;
 import me.StevenLawson.TotalFreedomMod.World.TFM_Flatlands;
 import net.camtech.verification.SocketServer;
 import org.bukkit.Server;
@@ -130,6 +131,15 @@ public class TotalFreedomMod extends JavaPlugin
         try
         {
             TFM_Flatlands.getInstance().getWorld();
+        }
+        catch (Exception ex)
+        {
+            TFM_Log.warning("Could not load world: Flatlands");
+        }
+
+        try
+        {
+            TFM_BuilderWorld.getInstance().getWorld();
         }
         catch (Exception ex)
         {

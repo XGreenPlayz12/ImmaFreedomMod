@@ -16,6 +16,7 @@ import org.bukkit.scheduler.BukkitTask;
 @CommandParameters(description = "View ticks-per-second", usage = "/<command>")
 public class Command_health extends TFM_Command
 {
+
     private static final int BYTES_PER_MB = 1024 * 1024;
     private static final DoubleRange TPS_RANGE = new DoubleRange(20.0 - 0.1, 20.0 + 0.1);
 
@@ -63,6 +64,7 @@ public class Command_health extends TFM_Command
 
     private class TFM_TickMeter
     {
+
         private final AtomicInteger ticks = new AtomicInteger();
         private final TotalFreedomMod plugin;
         private long startTime;

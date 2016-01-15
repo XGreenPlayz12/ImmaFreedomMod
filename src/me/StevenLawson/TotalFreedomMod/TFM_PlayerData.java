@@ -106,6 +106,10 @@ public class TFM_PlayerData
     private String lastCommand = "";
     private boolean cmdspyEnabled = false;
     private boolean didNeedHelp = false;
+    // Starts FOPM Changes //
+    private boolean inGod = false;
+    private boolean isDoubleJumper = false;
+    // Ends FOPM Changes //
     private String tag = null;
     private int warningCount = 0;
 
@@ -126,6 +130,28 @@ public class TFM_PlayerData
         return uuid;
     }
 
+    // Starts FOPM Changes //
+    public boolean inGod()
+    {
+        return this.inGod;
+    }
+
+    public void setGod(boolean state)
+    {
+        this.inGod = state;
+    }
+
+    public boolean isDoubleJumper()
+    {
+        return this.isDoubleJumper;
+    }
+
+    public void setDoubleJumper(boolean state)
+    {
+        this.isDoubleJumper = state;
+    }
+
+    // Ends FOPM Changes //
     public boolean isOrbiting()
     {
         return isOrbiting;

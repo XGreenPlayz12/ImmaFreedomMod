@@ -82,6 +82,7 @@ public enum TFM_ConfigEntry
     NOADMIN_IPS(List.class, "noadmin_ips"),
     ADMIN_ONLY_MODE(Boolean.class, "admin_only_mode"),
     AUTO_ENTITY_WIPE(Boolean.class, "auto_wipe"),
+    BUILDER_WORLD_ENABLED(Boolean.class, "enable_builder_world"),
     CONSOLE_IS_SENIOR(Boolean.class, "console_is_senior");
     //
     private final Class<?> type;

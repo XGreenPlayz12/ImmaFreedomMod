@@ -21,4 +21,24 @@ public class TylersUtilities
     {
         return Bukkit.broadcastMessage(player.getName() + " was killed by an admin");
     }
+
+    public static boolean isDoubleJumper(Player player)
+    {
+        return TFM_PlayerData.getPlayerData(player).isDoubleJumper();
+    }
+
+    public static void setDoubleJumper(Player player, boolean state)
+    {
+        TFM_PlayerData.getPlayerData(player).setDoubleJumper(state);
+    }
+
+    public static boolean inGod(Player player)
+    {
+        return TFM_PlayerData.getPlayerData(player).inGod();
+    }
+
+    public static void setGod(Player player, boolean enabled)
+    {
+        TFM_PlayerData.getPlayerData(player).setGod(enabled);
+    }
 }

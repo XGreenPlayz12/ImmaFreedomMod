@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 @CommandParameters(description = "Quick Op - op someone based on a partial name.", usage = "/<command> <partialname>")
 public class Command_qop extends TFM_Command
 {
+
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
