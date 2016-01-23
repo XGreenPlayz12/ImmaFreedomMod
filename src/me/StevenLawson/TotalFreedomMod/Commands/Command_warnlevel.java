@@ -21,11 +21,11 @@ public class Command_warnlevel extends TFM_Command
         if (TFM_PlayerData.getPlayerData(player).getWarningCount() >= 0)
         {
             int warnLvl = TFM_PlayerData.getPlayerData(player).getWarningCount();
-            sender.sendMessage(ChatColor.RED + "Your warning level is: " + ChatColor.GOLD + warnLvl);
+            playerMsg(ChatColor.RED + "Your warning level is: " + ChatColor.GOLD + warnLvl);
         }
         else
         {
-            sender.sendMessage("There has been an error with the code please contact one of the ImmaFreedom developers");
+            playerMsg("There has been an error with the code please contact one of the ImmaFreedom developers");
         }
         
         return true;
