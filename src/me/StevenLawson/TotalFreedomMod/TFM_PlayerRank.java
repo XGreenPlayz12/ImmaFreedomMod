@@ -14,6 +14,7 @@ public enum TFM_PlayerRank
     DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[TF-Dev]"),
     EXEC("an " + ChatColor.DARK_RED + "Executive", ChatColor.DARK_RED + "[Exec]"),
     IFDEV("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[IF Dev]"),
+    JNRDEVS("a " + ChatColor.DARK_PURPLE + "Junior Developer", ChatColor.DARK_PURPLE + "[JNR DEV]"),
     IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
@@ -85,7 +86,12 @@ public enum TFM_PlayerRank
         {
             return IFDEV;
         }
-
+        
+        if (JNRDEVS.contains(sender.getName()))
+        {
+           return JNRDEVS 
+        }
+        
         if (SYSADMINS.contains(sender.getName()))
         {
             return SYS;
