@@ -856,6 +856,13 @@ public class TFM_PlayerListener implements Listener
             afterNameSet(player);
             return;
         }
+        else if (TFM_Util.JNRDEVS.contains(player.getName()))
+        {
+            player.setPlayerListName(ChatColor.DARK_PURPLE + name);
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&Junior-Developer&8]");
+            afterNameSet(player);
+            return;
+        }
         else if (TFM_Util.EXECUTIVES.contains(player.getName()))
         {
             player.setPlayerListName(ChatColor.RED + name);
