@@ -493,7 +493,7 @@ public class TFM_PlayerData
     
     public boolean inSeniorChat()
     {
-        return this.inSeniorchat
+        return this.inSeniorchat;
     }
 
     public boolean inAdminChat()
