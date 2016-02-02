@@ -19,7 +19,7 @@ public class Command_adminlist extends TFM_Command
         sender.sendMessage(" ");
         //sender.sendMessage(ChatColor.DARK_RED + "Executives: ");
         sender.sendMessage(ChatColor.DARK_RED + "System Admins: samennis1, KM_Galahad");
-        sender.sendMessage(ChatColor.DARK_PURPLE + "Developers: AwesomePinch, AndySixx, Savnith, OxLemonxO");
+        sender.sendMessage(ChatColor.DARK_PURPLE + "Developers: AwesomePinch, AndySixx, OxLemonxO");
         sender.sendMessage(ChatColor.BLUE + "Owner: GrannyMary48");
         sender.sendMessage(ChatColor.GOLD + "========================( + )========================");
         return true;
