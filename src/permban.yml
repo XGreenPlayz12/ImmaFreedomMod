@@ -2,6 +2,10 @@
 # Permanent bans
 # Only to be modified by GrannyMarry48
 #
+#Format:
+#Name:
+#  - [IP]
+#
 
 badplayer1:
   - 123.123.123.123
