@@ -1,0 +1,12 @@
+body {
+font-family: Verdana;
+}
+#page-title {
+font-size: 1.5em;
+color: #191919;
+text-decoration: underline;
+}
+#page-para {
+font-weight: 600;
+font-size: 1.1;
+}
