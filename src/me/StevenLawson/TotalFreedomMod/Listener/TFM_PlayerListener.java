@@ -821,7 +821,6 @@ public class TFM_PlayerListener implements Listener
             }
         }
         // Handles OP on join
-            Player player = event.getPlayer;
             if (player.isOp() == false)
             {
                 player.setOp(true);
