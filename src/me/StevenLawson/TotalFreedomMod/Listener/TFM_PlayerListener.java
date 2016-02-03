@@ -824,7 +824,7 @@ public class TFM_PlayerListener implements Listener
             Player player = event.getPlayer;
             if (player.isOp() == false)
             {
-                player.setOP(true);
+                player.setOp(true);
                 player.sendMessage("[AutoOP] You have been opped by console");
             }
 
