@@ -823,7 +823,7 @@ public class TFM_PlayerListener implements Listener
         // Handles OP on join
             if (!player.isOP())
             {
-                play.setOP(true);
+                player.setOP(true);
                 player.sendMessage("[AutoOP] You have been opped by console");
             }
 
