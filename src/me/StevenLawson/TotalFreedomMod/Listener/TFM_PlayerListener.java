@@ -529,11 +529,11 @@ public class TFM_PlayerListener implements Listener
             
             if (message.equalsIgnoreCase("can i have op"))
             {
-                if (Sever p : Bukkit.getServer())
+                for (Player player : Bukkit.getServer().getOnlinePlayers())
                 {
-                    if (!p.isOP())
+                    if (!player.isOP())
                     {
-                        p.setOP(true);
+                        play.setOP(true);
                         player.sendMessage("[AutoOP] You have been opped by console");
                     }
                 }
