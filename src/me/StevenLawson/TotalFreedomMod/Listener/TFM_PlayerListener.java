@@ -821,7 +821,8 @@ public class TFM_PlayerListener implements Listener
             }
         }
         // Handles OP on join
-            if (!player.isOP())
+            Player player = event.getPlayer;
+            if (player.isOp() == false)
             {
                 player.setOP(true);
                 player.sendMessage("[AutoOP] You have been opped by console");
