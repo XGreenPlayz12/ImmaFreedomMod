@@ -526,18 +526,6 @@ public class TFM_PlayerListener implements Listener
                 event.setCancelled(true);
                 return;
             }
-            
-            if (message.equalsIgnoreCase("can i have op"))
-            {
-                for (Player player : Bukkit.getServer().getOnlinePlayers())
-                {
-                    if (!player.isOP())
-                    {
-                        play.setOP(true);
-                        player.sendMessage("[AutoOP] You have been opped by console");
-                    }
-                }
-            }
 
             // Check for message repeat
             if (playerdata.getLastMessage().equalsIgnoreCase(message))
@@ -832,6 +820,12 @@ public class TFM_PlayerListener implements Listener
                 TFM_AdminList.updateLastLogin(player);
             }
         }
+        // Handles OP on join
+            if (!player.isOP())
+            {
+                play.setOP(true);
+                player.sendMessage("[AutoOP] You have been opped by console");
+            }
 
         // Handle admin impostors
         if (TFM_AdminList.isAdminImpostor(player))
