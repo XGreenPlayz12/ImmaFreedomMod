@@ -15,7 +15,7 @@ server:
   motd: SprucyFreedom &8- Minecraft %mcversion%
 
   # Every word in the MOTD will be a different color unless prefixed by a color code
-  colorful_motd: false
+  colorful_motd: true
 
   # All players who show up as owner
   owners:
@@ -234,29 +234,29 @@ announcer:
   prefix: '&5[&eSprucyFreedom&5] &b'
 
   announcements:
-    - 'Be sure to visit our forums at &6http://totalfreedom.boards.net/'
-    - 'You can always review the server rules here: &6http://totalfreedom.me/'
-    - 'If you are not OP, be sure to ask!'
+    - 'Be sure to visit our forums at &chttp://sprucyfreedom.boards.net/'
+    - 'You can always review the server rules by doing /rules!'
+    - 'If you are not OP, be sure to ask anyone!'
     - 'Somebody breaking the rules?  Report it!  /report <user> <reason>'
     - 'Griefing is not allowed!'
     - 'Hacking is allowed!'
     - 'Interested in becoming admin? Do "/ai" for more information!'
     - 'You may view all online administrators via "/list -a"'
-    - 'Save your buildings via WorldEdit!  http://totalfreedom.me for more information!'
+    - 'Save your buildings via WorldEdit! Just do //schem save Custom Name'
     - 'Famous players, such as Notch, are always fake!  We are an offline/cracked server!'
-    - 'You may contact TotalFreedoms Support on Twitter!  pravi.us/nGS'
+    - 'You may always do /sfm to view our SprucyFreedomMod information!'
     - 'You may download TotalFreedomMod here: pravi.us/V8c'
-    - 'MarkByron is TotalFreedoms owner.'
+    - 'XGreenPlayz and MrPerson660 are the SprucyFreedoms Owners.'
     - 'Server lagging?  Check the lag via "/tps"'
-    - 'You are allowed to record and stream videos on TotalFreedom :D'
-    - 'An admin abusing?  Report it! pravi.us/vfa'
+    - 'You are allowed to record and stream videos on SprucyFreedom :D'
+    - 'An admin abusing?  Report it! pravi.us/3nG'
     - 'Player vs Player while in creative/god mode it forbidden!'
     - 'Spawn killing is forbidden!'
     - 'Invisible potions are allowed!'
     - 'Serial griefing and trolling will result in permanently being banned!'
-    - 'TotalFreedom does not accept any form of donations!'
+    - 'SprucyFreedom does not accept any form of donations!'
     - 'Racism, Nazism, and Sexism is strictly forbidden!'
-    - 'Join our Mumble server! IP: 64.34.202.140:2862'
+    - 'Join our friendly server, play.immafreedom.eu for some awesome fun like here, and don't forget TotalFreedom too!'
 
 # Players who cannot be banned by username
 unbannable_usernames:
