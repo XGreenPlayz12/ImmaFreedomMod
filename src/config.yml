@@ -231,7 +231,7 @@ announcer:
   interval: 600
 
   # Prefix for all announcements
-  prefix: '&5[&eSprucyFreedom&5] &b'
+  prefix: '&5[&eSprucyFreedom&5] &c'
 
   announcements:
     - 'Be sure to visit our forums at &6http://totalfreedom.boards.net/'
